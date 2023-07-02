@@ -1,0 +1,146 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+
+    <Dialog
+        id="update-dialog-id" 
+        title="Update">
+
+        <f:SimpleForm 
+            id="update-sf-id"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="12"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="false" >
+			<f:content>
+                <HBox id="_IDGenHBox1">
+                    <VBox id="_IDGenVBox1" class="sapUiTinyMargin">
+                        <!-- Third Party SO. -->
+                        <Label id="_IDGenLabel1" text="Third Party SO." />
+                        <ComboBox id="ThirdPartySo-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/ThirdPartySo}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem1" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox>
+            
+                        <!-- Payer -->
+                        <Label id="_IDGenLabel2" text="Payer" />
+                        <ComboBox id="Payer-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Payer}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem3" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox>
+
+                        <!-- Bill to -->
+                        <Label id="_IDGenLabel3" text="Bill to" />
+                        <ComboBox id="BillTo-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/BillTo}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem5" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox>
+            
+                        <!-- Freight forward -->
+                        <Label id="_IDGenLabel4" text="Freight forward" />
+                        <ComboBox id="Freightfwd-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Freightfwd}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem7" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox>
+
+                        <!-- Incoterm1 -->
+                        <Label id="_IDGenLabel5" text="Incoterm1" />
+                        <ComboBox id="Incoterm1-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Incoterm1}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem9" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox>
+            
+                        <!-- Incoterm2 -->
+                        <Label id="_IDGenLabel6" text="Incoterm2" />
+                        <ComboBox id="Incoterm2-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Incoterm2}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem11" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox>
+
+                        <!-- Invoice preference -->
+                        <Label id="_IDGenLabel7" text="Invoice preference" />
+                        <ComboBox id="Invoicepref-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Invoicepref}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem13" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox>
+                    </VBox>
+
+                    <VBox id="_IDGenVBox2" class="sapUiTinyMargin">
+                        <!-- Payment terms -->
+                        <Label id="_IDGenLabel8" text="Payment terms" />
+                        <ComboBox id="PaymentTerms-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Paymentterm}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem15" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox>
+
+                        <!-- Customer category -->
+                        <Label id="_IDGenLabel9" text="Customer category" />
+                        <ComboBox id="CustomerCategory-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/CustomerCategory}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem17" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox>
+            
+                        <!-- Unloading point -->
+                        <Label id="_IDGenLabel10" text="Unloading point" />
+                        <ComboBox id="UnloadingPoint-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/UnloadingPoint}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem19" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox>
+
+                        <!-- Customer Group -->
+                        <Label id="_IDGenLabel11" text="Customer Group" />
+                        <ComboBox id="CustomerGroup-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/CustomerGroup}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem21" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox>
+            
+                        <!-- Currency -->
+                        <Label id="_IDGenLabel12" text="Currency" />
+                        <ComboBox id="Currency-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Currency}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem23" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox>
+
+                        <!-- Shipping Condition -->
+                        <Label id="_IDGenLabel13" text="Shipping Condition" />
+                        <ComboBox id="Shippingcond-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Shippingcond}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem25" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox>
+
+                        <!-- TZone -->
+                        <Label id="_IDGenLabel14" text="TZone" />
+                        <ComboBox id="TZone-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/TZone}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem27" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox>
+                        
+                        <!-- TZone1 -->
+                        <!-- <Label id="_IDGenLabel15" text="TZone1" />
+                        <ComboBox id="TZone1-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/TZone1}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem29" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox> -->
+
+                        <!-- TZone2 -->
+                        <!-- <Label id="_IDGenLabel16" text="TZone2" />
+                        <ComboBox id="TZone2-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/TZone2}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem31" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox> -->
+                    </VBox>
+                </HBox>
+            </f:content>
+		</f:SimpleForm>
+
+        <beginButton>
+            <Button
+                id="ok-btn-id"
+                type="Accept"
+                text="Submit"
+                press=".onUpdateOkPress"/>
+        </beginButton>
+        
+        <endButton>
+            <Button
+                id="cancel-btn-id"
+                type="Reject"
+                text="Cancel"
+                press=".onUpdateCancelPress"/>
+        </endButton>
+    </Dialog>
+
+</core:FragmentDefinition>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common" />
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI" />
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication" />
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../sap/zotc_sb_ui_refreshso/$metadata">
+        <edmx:Include Namespace="ZOTC_SB_UI_REFRESHSO" Alias="SAP" />
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="zotc_sb_ui_refreshso_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="cds_zotc_sd_ui_refreshso.I_Customer_VHType/CustomerAccountGroup">
+                <Annotation Term="UI.HiddenFilter" />
+                <Annotation Term="UI.Hidden" />
+            </Annotations>
+            <Annotations Target="cds_zotc_sd_ui_refreshso.I_Customer_VHType/AuthorizationGroup">
+                <Annotation Term="UI.HiddenFilter" />
+                <Annotation Term="UI.Hidden" />
+            </Annotations>
+            <Annotations Target="cds_zotc_sd_ui_refreshso.I_Customer_VHType/IsBusinessPurposeCompleted">
+                <Annotation Term="UI.HiddenFilter" />
+                <Annotation Term="UI.Hidden" />
+            </Annotations>
+            <Annotations Target="cds_zotc_sd_ui_refreshso.ZOTC_C_REFRESHSOType/SalesOrderNo">
+                <Annotation Term="UI.Hidden" />
+            </Annotations>
+            <Annotations Target="cds_zotc_sd_ui_refreshso.ZOTC_C_REFRESHSOType/Update_ac">
+                <Annotation Term="UI.Hidden" />
+            </Annotations>
+            <Annotations Target="cds_zotc_sd_ui_refreshso.ZOTC_C_REFRESHSOType">
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Update_SO" />
+                            <PropertyValue Property="Action" String="cds_zotc_sd_ui_refreshso.cds_zotc_sd_ui_refreshso_Entities/ZOTC_C_REFRESHSOUpdate" />
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="customer" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="OrderType" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Payer" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SalesOrganization" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DistributionChannel" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Division" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CreditControlArea" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="OrderDate" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PayerYN" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BillTo" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="FreightForward" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Incoterm1" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Incoterm2" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="InvoicePreference" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PaymentTerms" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CustomerCategory" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="UnloadingPoint" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CustomerGroup" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Currency" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ShippingCondition" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TZone2" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TZone1" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TZone" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Sales Order No" />
+                            <PropertyValue Property="Value" Path="SalesOrderNo" />
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Update" />
+                            <PropertyValue Property="Action" String="cds_zotc_sd_ui_refreshso.cds_zotc_sd_ui_refreshso_Entities/ZOTC_C_REFRESHSOUpdate" />
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Sold to Party" />
+                            <PropertyValue Property="Value" Path="customer" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Order Type" />
+                            <PropertyValue Property="Value" Path="OrderType" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Payer" />
+                            <PropertyValue Property="Value" Path="Payer" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Sales Organization" />
+                            <PropertyValue Property="Value" Path="SalesOrganization" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Distribution Channel" />
+                            <PropertyValue Property="Value" Path="DistributionChannel" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Division" />
+                            <PropertyValue Property="Value" Path="Division" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="CC Area" />
+                            <PropertyValue Property="Value" Path="CreditControlArea" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Time period" />
+                            <PropertyValue Property="Value" Path="OrderDate" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Payer" />
+                            <PropertyValue Property="Value" Path="PayerYN" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Bill To" />
+                            <PropertyValue Property="Value" Path="BillTo" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Freight Forward" />
+                            <PropertyValue Property="Value" Path="FreightForward" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Incoterm1" />
+                            <PropertyValue Property="Value" Path="Incoterm1" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Incoterm2" />
+                            <PropertyValue Property="Value" Path="Incoterm2" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Invoice Preference" />
+                            <PropertyValue Property="Value" Path="InvoicePreference" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Payment Terms" />
+                            <PropertyValue Property="Value" Path="PaymentTerms" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Customer Category" />
+                            <PropertyValue Property="Value" Path="CustomerCategory" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Unloading Point" />
+                            <PropertyValue Property="Value" Path="UnloadingPoint" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Customer Group" />
+                            <PropertyValue Property="Value" Path="CustomerGroup" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Currency" />
+                            <PropertyValue Property="Value" Path="Currency" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Shipping Condition" />
+                            <PropertyValue Property="Value" Path="ShippingCondition" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="TZone" />
+                            <PropertyValue Property="Value" Path="TZone2" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="TZone" />
+                            <PropertyValue Property="Value" Path="TZone1" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="TZone" />
+                            <PropertyValue Property="Value" Path="TZone" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>SalesOrderNo</PropertyPath>
+                        <PropertyPath>customer</PropertyPath>
+                        <PropertyPath>OrderType</PropertyPath>
+                        <PropertyPath>Payer</PropertyPath>
+                        <PropertyPath>SalesOrganization</PropertyPath>
+                        <PropertyPath>DistributionChannel</PropertyPath>
+                        <PropertyPath>Division</PropertyPath>
+                        <PropertyPath>CreditControlArea</PropertyPath>
+                        <PropertyPath>OrderDate</PropertyPath>
+                        <PropertyPath>ThirdPartySo</PropertyPath>
+                        <PropertyPath>PayerYN</PropertyPath>
+                        <PropertyPath>BillTo</PropertyPath>
+                        <PropertyPath>FreightForward</PropertyPath>
+                        <PropertyPath>Incoterm1</PropertyPath>
+                        <PropertyPath>Incoterm2</PropertyPath>
+                        <PropertyPath>InvoicePreference</PropertyPath>
+                        <PropertyPath>PaymentTerms</PropertyPath>
+                        <PropertyPath>CustomerCategory</PropertyPath>
+                        <PropertyPath>UnloadingPoint</PropertyPath>
+                        <PropertyPath>CustomerGroup</PropertyPath>
+                        <PropertyPath>Currency</PropertyPath>
+                        <PropertyPath>ShippingCondition</PropertyPath>
+                        <PropertyPath>TZone2</PropertyPath>
+                        <PropertyPath>TZone1</PropertyPath>
+                        <PropertyPath>TZone</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
