@@ -50,6 +50,7 @@ sap.ui.define(
 
         // view model data
         _oViewModel = new JSONModel({
+          RetainOldChg: false,
           ThirdPartySo: false,
           Payer: false,
           BillTo: false,
@@ -105,6 +106,7 @@ sap.ui.define(
         } else {
           // clear view model values
           _oViewModel.setData({
+            RetainOldChg: false,
             ThirdPartySo: false,
             Payer: false,
             BillTo: false,
@@ -127,6 +129,7 @@ sap.ui.define(
 
       onUpdateOkPress: function () {
         const oViewData = _oViewModel.getData();
+        const RetainOldChg = oViewData.RetainOldChg == "true";
         const ThirdPartySo = oViewData.ThirdPartySo == "true";
         const Payer = oViewData.Payer == "true";
         const BillTo = oViewData.BillTo == "true";
@@ -158,6 +161,7 @@ sap.ui.define(
             OrderType: oContextData.OrderType,
 
             // boolean fields
+            RetainOldChg,
             ThirdPartySo,
             Payer,
             BillTo,
@@ -235,7 +239,13 @@ sap.ui.define(
               beginButton: new Button({
                 type: ButtonType.Emphasized,
                 text: "OK",
-                press: () => oMessageDialog.close(),
+                press: () => {
+                  // refresh model
+                  _oDataModel.refresh();
+
+                  // close dialog
+                  oMessageDialog.close();
+                },
               }),
               styleClass: sResponsivePaddingClasses,
             });

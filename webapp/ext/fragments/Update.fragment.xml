@@ -1,35 +1,26 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:smartfilterbar="sap.ui.comp.smartfilterbar"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
 
-    <Dialog
-        id="update-dialog-id" 
-        title="Update">
+    <Dialog id="update-dialog-id" title="Update">
 
-        <f:SimpleForm 
-            id="update-sf-id"
-			editable="true"
-			layout="ResponsiveGridLayout"
-			labelSpanXL="4"
-			labelSpanL="4"
-			labelSpanM="12"
-			labelSpanS="12"
-			adjustLabelSpan="false"
-			emptySpanXL="0"
-			emptySpanL="0"
-			emptySpanM="0"
-			emptySpanS="0"
-			columnsXL="2"
-			columnsL="2"
-			columnsM="2"
-			singleContainerFullSize="false" >
-			<f:content>
+        <f:SimpleForm id="update-sf-id" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false">
+            <f:content>
                 <HBox id="_IDGenHBox1">
                     <VBox id="_IDGenVBox1" class="sapUiTinyMargin">
+                        <!-- Third Party SO. -->
+                        <Label id="_IDGenLabel111" text="Retain Old Change" />
+                        <ComboBox id="RetainOldChg-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/RetainOldChg}" class="sapUiSmallMarginBottom">
+                            <core:Item id="_IDGenItem111" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
+                        </ComboBox>
+
                         <!-- Third Party SO. -->
                         <Label id="_IDGenLabel1" text="Third Party SO." />
                         <ComboBox id="ThirdPartySo-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/ThirdPartySo}" class="sapUiSmallMarginBottom">
                             <core:Item id="_IDGenItem1" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
                         </ComboBox>
-            
+
                         <!-- Payer -->
                         <Label id="_IDGenLabel2" text="Payer" />
                         <ComboBox id="Payer-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Payer}" class="sapUiSmallMarginBottom">
@@ -41,7 +32,7 @@
                         <ComboBox id="BillTo-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/BillTo}" class="sapUiSmallMarginBottom">
                             <core:Item id="_IDGenItem5" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
                         </ComboBox>
-            
+
                         <!-- Freight forward -->
                         <Label id="_IDGenLabel4" text="Freight forward" />
                         <ComboBox id="Freightfwd-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Freightfwd}" class="sapUiSmallMarginBottom">
@@ -53,7 +44,7 @@
                         <ComboBox id="Incoterm1-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Incoterm1}" class="sapUiSmallMarginBottom">
                             <core:Item id="_IDGenItem9" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
                         </ComboBox>
-            
+
                         <!-- Incoterm2 -->
                         <Label id="_IDGenLabel6" text="Incoterm2" />
                         <ComboBox id="Incoterm2-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Incoterm2}" class="sapUiSmallMarginBottom">
@@ -79,7 +70,7 @@
                         <ComboBox id="CustomerCategory-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/CustomerCategory}" class="sapUiSmallMarginBottom">
                             <core:Item id="_IDGenItem17" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
                         </ComboBox>
-            
+
                         <!-- Unloading point -->
                         <Label id="_IDGenLabel10" text="Unloading point" />
                         <ComboBox id="UnloadingPoint-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/UnloadingPoint}" class="sapUiSmallMarginBottom">
@@ -91,7 +82,7 @@
                         <ComboBox id="CustomerGroup-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/CustomerGroup}" class="sapUiSmallMarginBottom">
                             <core:Item id="_IDGenItem21" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
                         </ComboBox>
-            
+
                         <!-- Currency -->
                         <Label id="_IDGenLabel12" text="Currency" />
                         <ComboBox id="Currency-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Currency}" class="sapUiSmallMarginBottom">
@@ -109,7 +100,7 @@
                         <ComboBox id="TZone-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/TZone}" class="sapUiSmallMarginBottom">
                             <core:Item id="_IDGenItem27" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
                         </ComboBox>
-                        
+
                         <!-- TZone1 -->
                         <!-- <Label id="_IDGenLabel15" text="TZone1" />
                         <ComboBox id="TZone1-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/TZone1}" class="sapUiSmallMarginBottom">
@@ -124,22 +115,14 @@
                     </VBox>
                 </HBox>
             </f:content>
-		</f:SimpleForm>
+        </f:SimpleForm>
 
         <beginButton>
-            <Button
-                id="ok-btn-id"
-                type="Accept"
-                text="Submit"
-                press=".onUpdateOkPress"/>
+            <Button id="ok-btn-id" type="Accept" text="Submit" press=".onUpdateOkPress"/>
         </beginButton>
-        
+
         <endButton>
-            <Button
-                id="cancel-btn-id"
-                type="Reject"
-                text="Cancel"
-                press=".onUpdateCancelPress"/>
+            <Button id="cancel-btn-id" type="Reject" text="Cancel" press=".onUpdateCancelPress"/>
         </endButton>
     </Dialog>
 
