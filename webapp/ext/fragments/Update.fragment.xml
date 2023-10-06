@@ -9,8 +9,8 @@
             <f:content>
                 <HBox id="_IDGenHBox1">
                     <VBox id="_IDGenVBox1" class="sapUiTinyMargin">
-                        <!-- Third Party SO. -->
-                        <Label id="_IDGenLabel111" text="Retain Old Change" />
+                        <!-- Manual Overwrite -->
+                        <Label id="_IDGenLabel111" text="Manual Overwrite" />
                         <ComboBox id="RetainOldChg-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/RetainOldChg}" class="sapUiSmallMarginBottom">
                             <core:Item id="_IDGenItem111" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
                         </ComboBox>

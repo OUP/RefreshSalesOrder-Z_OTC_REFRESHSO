@@ -153,8 +153,13 @@ sap.ui.define(
           "sapUiResponsivePadding--header sapUiResponsivePadding--content sapUiResponsivePadding--footer";
 
         for (let i = 0, iLen = aSelectedContexts.length; i < iLen; i++) {
-          const oContextData = aSelectedContexts[i].getObject();
+          const oContext = aSelectedContexts[i];
 
+          if (!oContext) {
+            continue;
+          }
+
+          const oContextData = aSelectedContexts[i].getObject();
           const urlParameters = {
             SalesOrderNo: oContextData.SalesOrderNo,
             customer: oContextData.customer,
