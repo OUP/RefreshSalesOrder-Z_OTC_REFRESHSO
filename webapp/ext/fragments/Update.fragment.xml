@@ -3,119 +3,69 @@
     xmlns:core="sap.ui.core"
     xmlns:f="sap.ui.layout.form">
 
-    <Dialog id="update-dialog-id" title="Update">
+    <Dialog id="update-dialog-id" title="Update" contentWidth="450px" class="sapUiResponsivePadding--header sapUiResponsivePadding--subHeader sapUiResponsivePadding--content sapUiResponsivePadding--footer sapUiResponsivePadding--floatingFooter">
+        <VBox id="_IDGenVBox0" width="100%">
+            <VBox id="_IDGenVBox1" class="sapUiTinyMargin">
+                <Label id="_IDGenLabel1" labelFor="_IDGenRBG1" text="Update Type" class="sapUiSmallMarginBeginEnd sapUiSmallMarginTop"/>
+                <RadioButtonGroup id="_IDGenRBG1" columns="2" valueState="Information" class="sapUiTinyMarginBegin">
+                    <RadioButton id="_IDGenRB1" text="Standard" class="sapUiTinyMarginEnd"/>
+                    <RadioButton id="_IDGenRB2" text="Force" />
+                </RadioButtonGroup>
+            </VBox>
+            <HBox id="_IDGenHBox2" width="100%" class="sapUiSmallMarginBottom">
+                <VBox id="_IDGenVBox3" width="50%" class="sapUiSmallMarginBeginEnd">
+                    <!-- Customer Group -->
+                    <CheckBox id="CustomerGroup-cb-id" text="Customer Group" selected="{oViewModel>/CustomerGroup}" valueState="None" />
 
-        <f:SimpleForm id="update-sf-id" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false">
-            <f:content>
-                <HBox id="_IDGenHBox1">
-                    <VBox id="_IDGenVBox1" class="sapUiTinyMargin">
-                        <!-- Manual Overwrite -->
-                        <Label id="_IDGenLabel111" text="Manual Overwrite" />
-                        <ComboBox id="RetainOldChg-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/RetainOldChg}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem111" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox>
+                    <!-- Shipping Condition -->
+                    <CheckBox id="Shippingcond-cb-id" text="Shipping Condition" selected="{oViewModel>/Shippingcond}" valueState="None" />
 
-                        <!-- Third Party SO. -->
-                        <Label id="_IDGenLabel1" text="Third Party SO." />
-                        <ComboBox id="ThirdPartySo-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/ThirdPartySo}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem1" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox>
+                    <!-- Unloading point -->
+                    <CheckBox id="UnloadingPoint-cb-id" text="Unloading point" selected="{oViewModel>/UnloadingPoint}" valueState="None" />
 
-                        <!-- Payer -->
-                        <Label id="_IDGenLabel2" text="Payer" />
-                        <ComboBox id="Payer-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Payer}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem3" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox>
+                    <!-- Incoterm1 -->
+                    <CheckBox id="Incoterm1-cb-id" text="Incoterm1" selected="{oViewModel>/Incoterm1}" valueState="None" />
 
-                        <!-- Bill to -->
-                        <Label id="_IDGenLabel3" text="Bill to" />
-                        <ComboBox id="BillTo-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/BillTo}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem5" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox>
+                    <!-- Bill to -->
+                    <CheckBox id="BillTo-cb-id" text="Bill to" selected="{oViewModel>/BillTo}" valueState="None" />
 
-                        <!-- Freight forward -->
-                        <Label id="_IDGenLabel4" text="Freight forward" />
-                        <ComboBox id="Freightfwd-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Freightfwd}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem7" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox>
+                    <!-- Freight forward -->
+                    <CheckBox id="Freightfwd-cb-id" text="Freight forward" selected="{oViewModel>/Freightfwd}" valueState="None" />
 
-                        <!-- Incoterm1 -->
-                        <Label id="_IDGenLabel5" text="Incoterm1" />
-                        <ComboBox id="Incoterm1-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Incoterm1}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem9" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox>
+                    <!-- Invoice preference -->
+                    <CheckBox id="Invoicepref-cb-id" text="Invoice preference" selected="{oViewModel>/Invoicepref}" valueState="None" />
+                </VBox>
 
-                        <!-- Incoterm2 -->
-                        <Label id="_IDGenLabel6" text="Incoterm2" />
-                        <ComboBox id="Incoterm2-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Incoterm2}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem11" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox>
+                <VBox id="_IDGenVBox4" width="50%" class="sapUiSmallMarginBeginEnd">
+                    <!-- Currency -->
+                    <CheckBox id="Currency-cb-id" text="Currency" selected="{oViewModel>/Currency}" valueState="None" />
 
-                        <!-- Invoice preference -->
-                        <Label id="_IDGenLabel7" text="Invoice preference" />
-                        <ComboBox id="Invoicepref-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Invoicepref}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem13" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox>
-                    </VBox>
+                    <!-- TZone -->
+                    <CheckBox id="TZone-cb-id" text="TZone" selected="{oViewModel>/TZone}" valueState="None" />
 
-                    <VBox id="_IDGenVBox2" class="sapUiTinyMargin">
-                        <!-- Payment terms -->
-                        <Label id="_IDGenLabel8" text="Payment terms" />
-                        <ComboBox id="PaymentTerms-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Paymentterm}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem15" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox>
+                    <!-- Payment terms -->
+                    <CheckBox id="PaymentTerms-cb-id" text="Payment terms" selected="{oViewModel>/Paymentterm}" valueState="None" />
+                            
+                    <!-- Incoterm2 -->
+                    <CheckBox id="Incoterm2-cb-id" text="Incoterm2" selected="{oViewModel>/Incoterm2}" valueState="None" />
 
-                        <!-- Customer category -->
-                        <Label id="_IDGenLabel9" text="Customer category" />
-                        <ComboBox id="CustomerCategory-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/CustomerCategory}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem17" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox>
+                    <!-- Payer -->
+                    <CheckBox id="Payer-cb-id" text="Payer" selected="{oViewModel>/Payer}" valueState="None" />
 
-                        <!-- Unloading point -->
-                        <Label id="_IDGenLabel10" text="Unloading point" />
-                        <ComboBox id="UnloadingPoint-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/UnloadingPoint}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem19" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox>
+                    <!-- Third Party SO. -->
+                    <CheckBox id="ThirdPartySo-cb-id" text="Third Party SO." selected="{oViewModel>/ThirdPartySo}" valueState="None" />
 
-                        <!-- Customer Group -->
-                        <Label id="_IDGenLabel11" text="Customer Group" />
-                        <ComboBox id="CustomerGroup-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/CustomerGroup}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem21" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox>
+                    <!-- Customer category -->
+                    <CheckBox id="CustomerCategory-cb-id" text="Customer category" selected="{oViewModel>/CustomerCategory}" valueState="None" />
 
-                        <!-- Currency -->
-                        <Label id="_IDGenLabel12" text="Currency" />
-                        <ComboBox id="Currency-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Currency}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem23" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox>
-
-                        <!-- Shipping Condition -->
-                        <Label id="_IDGenLabel13" text="Shipping Condition" />
-                        <ComboBox id="Shippingcond-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/Shippingcond}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem25" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox>
-
-                        <!-- TZone -->
-                        <Label id="_IDGenLabel14" text="TZone" />
-                        <ComboBox id="TZone-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/TZone}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem27" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox>
-
-                        <!-- TZone1 -->
-                        <!-- <Label id="_IDGenLabel15" text="TZone1" />
-                        <ComboBox id="TZone1-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/TZone1}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem29" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox> -->
-
-                        <!-- TZone2 -->
-                        <!-- <Label id="_IDGenLabel16" text="TZone2" />
-                        <ComboBox id="TZone2-cb-id" items="{oUpdateItems>/}" selectedKey="{oViewModel>/TZone2}" class="sapUiSmallMarginBottom">
-                            <core:Item id="_IDGenItem31" key="{path:'oUpdateItems>key', type:'sap.ui.model.type.Boolean'}" text="{oUpdateItems>text}"/>
-                        </ComboBox> -->
-                    </VBox>
-                </HBox>
-            </f:content>
-        </f:SimpleForm>
+                    <!-- TZone1 -->
+                    <!-- <CheckBox id="TZone1-cb-id" text="TZone1" selected="{oViewModel>/TZone1}" valueState="None" /> -->
+                    
+                    <!-- TZone2 -->
+                    <!-- <CheckBox id="TZone2-cb-id" text="TZone2" selected="{oViewModel>/TZone2}" valueState="None" /> -->
+                </VBox>
+            </HBox>
+        </VBox>
 
         <beginButton>
             <Button id="ok-btn-id" type="Accept" text="Submit" press=".onUpdateOkPress"/>

@@ -4,6 +4,7 @@ sap.ui.define(
     "sap/ui/core/Fragment",
     "sap/ui/core/library",
     "sap/m/MessageBox",
+    "sap/m/MessageToast",
     "sap/m/library",
     "sap/m/Dialog",
     "sap/m/Button",
@@ -14,6 +15,7 @@ sap.ui.define(
     Fragment,
     coreLibrary,
     MessageBox,
+    MessageToast,
     mobileLibrary,
     Dialog,
     Button,
@@ -50,6 +52,7 @@ sap.ui.define(
 
         // view model data
         _oViewModel = new JSONModel({
+          ForceUpdate: false,
           RetainOldChg: false,
           ThirdPartySo: false,
           Payer: false,
@@ -106,6 +109,7 @@ sap.ui.define(
         } else {
           // clear view model values
           _oViewModel.setData({
+            ForceUpdate: false,
             RetainOldChg: false,
             ThirdPartySo: false,
             Payer: false,
@@ -129,24 +133,51 @@ sap.ui.define(
 
       onUpdateOkPress: function () {
         const oViewData = _oViewModel.getData();
-        const RetainOldChg = oViewData.RetainOldChg == "true";
-        const ThirdPartySo = oViewData.ThirdPartySo == "true";
-        const Payer = oViewData.Payer == "true";
-        const BillTo = oViewData.BillTo == "true";
-        const Freightfwd = oViewData.Freightfwd == "true";
-        const Incoterm1 = oViewData.Incoterm1 == "true";
-        const Incoterm2 = oViewData.Incoterm2 == "true";
-        const Invoicepref = oViewData.Invoicepref == "true";
-        const CustomerCategory = oViewData.CustomerCategory == "true";
-        const UnloadingPoint = oViewData.UnloadingPoint == "true";
-        const CustomerGroup = oViewData.CustomerGroup == "true";
-        const Currency = oViewData.Currency == "true";
-        const Shippingcond = oViewData.Shippingcond == "true";
-        const TZone = oViewData.TZone == "true";
-        const Paymentterm = oViewData.Paymentterm == "true";
+        let {
+          ForceUpdate,
+          RetainOldChg,
+          ThirdPartySo,
+          Payer,
+          BillTo,
+          Freightfwd,
+          Incoterm1,
+          Incoterm2,
+          Invoicepref,
+          CustomerCategory,
+          UnloadingPoint,
+          CustomerGroup,
+          Currency,
+          Shippingcond,
+          TZone,
+          Paymentterm,
+        } = oViewData;
+
+        if (
+          !ThirdPartySo &&
+          !Payer &&
+          !BillTo &&
+          !Freightfwd &&
+          !Incoterm1 &&
+          !Incoterm2 &&
+          !Invoicepref &&
+          !CustomerCategory &&
+          !UnloadingPoint &&
+          !CustomerGroup &&
+          !Currency &&
+          !Shippingcond &&
+          !TZone &&
+          !Paymentterm
+        ) {
+          MessageToast.show("Select atleast one item to proceed");
+          return;
+        }
 
         // read selected rows from table
         const aSelectedContexts = this.extensionAPI.getSelectedContexts();
+
+        const oUpdateRadioBtn = sap.ui.getCore().byId("_IDGenRBG1");
+        RetainOldChg = oUpdateRadioBtn.getSelectedIndex() === 0;
+        ForceUpdate = oUpdateRadioBtn.getSelectedIndex() === 1;
 
         // padding context
         const sResponsivePaddingClasses =
@@ -166,6 +197,7 @@ sap.ui.define(
             OrderType: oContextData.OrderType,
 
             // boolean fields
+            ForceUpdate,
             RetainOldChg,
             ThirdPartySo,
             Payer,
